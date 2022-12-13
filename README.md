@@ -1,6 +1,6 @@
-# KI NBA Project
+# Introduction
 
-Use NBA rookie stats to predict if player will last 5 years in league
+This Project's aim is to use NBA player stats to predict if a player will last 5 years in league.
 
 ## Members
 * Christoph Handel
