@@ -17,9 +17,8 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-print('Q1: ' + str(nba_data['GP'].quantile(0.25)))
-print('Q3: ' + str(nba_data['GP'].quantile(0.75)))
-print('Index mit dem höchsten GP Wert: ' + str(nba_data['GP'].idxmax()))
+nba_data['MIN'] = nba_data['MIN'] * 2
+nba_data['MIN']
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
@@ -37,15 +36,14 @@ File [0;32mpandas/_libs/hashtable_class_helper.pxi:5745[0m, in [0;36mpandas._
 
 File [0;32mpandas/_libs/hashtable_class_helper.pxi:5753[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[0;34m()[0m
 
-[0;31mKeyError[0m: 'GP'
+[0;31mKeyError[0m: 'MIN'
 
 The above exception was the direct cause of the following exception:
 
 [0;31mKeyError[0m                                  Traceback (most recent call last)
-Cell [0;32mIn[9], line 1[0m
-[0;32m----> 1[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mQ1: [39m[38;5;124m'[39m [38;5;241m+[39m [38;5;28mstr[39m([43mnba_data[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mGP[39;49m[38;5;124;43m'[39;49m[43m][49m[38;5;241m.[39mquantile([38;5;241m0.25[39m)))
-[1;32m      2[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mQ3: [39m[38;5;124m'[39m [38;5;241m+[39m [38;5;28mstr[39m(nba_data[[38;5;124m'[39m[38;5;124mGP[39m[38;5;124m'[39m][38;5;241m.[39mquantile([38;5;241m0.75[39m)))
-[1;32m      3[0m [38;5;28mprint[39m([38;5;124m'[39m[38;5;124mIndex mit dem höchsten GP Wert: [39m[38;5;124m'[39m [38;5;241m+[39m [38;5;28mstr[39m(nba_data[[38;5;124m'[39m[38;5;124mGP[39m[38;5;124m'[39m][38;5;241m.[39midxmax()))
+Cell [0;32mIn[10], line 1[0m
+[0;32m----> 1[0m nba_data[[38;5;124m'[39m[38;5;124mMIN[39m[38;5;124m'[39m] [38;5;241m=[39m [43mnba_data[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mMIN[39;49m[38;5;124;43m'[39;49m[43m][49m [38;5;241m*[39m [38;5;241m2[39m
+[1;32m      2[0m nba_data[[38;5;124m'[39m[38;5;124mMIN[39m[38;5;124m'[39m]
 
 File [0;32m/opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/core/frame.py:3805[0m, in [0;36mDataFrame.__getitem__[0;34m(self, key)[0m
 [1;32m   3803[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
@@ -64,6 +62,6 @@ File [0;32m/opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/p
 [1;32m   3809[0m     [38;5;66;03m#  the TypeError.[39;00m
 [1;32m   3810[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
 
-[0;31mKeyError[0m: 'GP'
-KeyError: 'GP'
+[0;31mKeyError[0m: 'MIN'
+KeyError: 'MIN'
 

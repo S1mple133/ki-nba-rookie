@@ -1345,9 +1345,24 @@ dtype: object
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q1: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q3: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Index mit dem höchsten GP Wert: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q1: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q3: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Index mit dem höchsten GamesPlayed Wert: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Q1: 47.0
+Q3: 77.0
+Index mit dem höchsten GamesPlayed Wert: Larry Johnson
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1367,15 +1382,14 @@ dtype: object
 
 <span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5753,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
 
-<span class="ne">KeyError</span>: &#39;GP&#39;
+<span class="ne">KeyError</span>: &#39;MIN&#39;
 
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q1: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q3: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Index mit dem höchsten GP Wert: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()))</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/core/frame.py:3805,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">   </span><span class="mi">3803</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -1394,32 +1408,7 @@ dtype: object
 <span class="g g-Whitespace">   </span><span class="mi">3809</span>     <span class="c1">#  the TypeError.</span>
 <span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: &#39;GP&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
-<span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Brandon Ingram     54.8
-Andrew Harrison    53.8
-JaKarr Sampson     30.6
-Malik Sealy        23.2
-Matt Geiger        23.0
-                   ... 
-Byron Houston      32.2
-Chris Smith        31.6
-Chris Smith        31.6
-Marlon Maxey       24.2
-Litterial Green    24.0
-Name: MIN, Length: 1338, dtype: float64
+<span class="ne">KeyError</span>: &#39;MIN&#39;
 </pre></div>
 </div>
 </div>
@@ -1428,7 +1417,7 @@ Name: MIN, Length: 1338, dtype: float64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_experience</span><span class="p">(</span><span class="n">row</span><span class="p">):</span> 
   <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;Unerfahren&#39;</span>
-  <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
       <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;MIN&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">50.0</span><span class="p">:</span> 
         <span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;Erfahren&#39;</span>
       <span class="k">else</span><span class="p">:</span>
@@ -3666,7 +3655,7 @@ Name: FTM, Length: 1338, dtype: bool
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;GP&#39;</span><span class="p">,</span><span class="s1">&#39;MIN&#39;</span><span class="p">])[</span><span class="s1">&#39;FGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;mean&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span><span class="s1">&#39;MIN&#39;</span><span class="p">])[</span><span class="s1">&#39;FGA&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;mean&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
