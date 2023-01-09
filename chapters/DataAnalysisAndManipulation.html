@@ -303,6 +303,356 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;GP&#39;</span><span class="p">:</span> <span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span>
+<span class="s1">&#39;MIN&#39;</span><span class="p">:</span><span class="s1">&#39;MinutesPlayed&#39;</span><span class="p">,</span>
+<span class="s1">&#39;PTS&#39;</span><span class="p">:</span><span class="s1">&#39;PointsPerGame&#39;</span><span class="p">,</span>
+<span class="s1">&#39;FGM&#39;</span><span class="p">:</span><span class="s1">&#39;FieldGoalsMade&#39;</span><span class="p">,</span>
+<span class="s1">&#39;FGA&#39;</span><span class="p">:</span><span class="s1">&#39;FieldGoalAttempts&#39;</span><span class="p">,</span>
+<span class="s1">&#39;FG%&#39;</span><span class="p">:</span><span class="s1">&#39;FieldGoalPercent&#39;</span><span class="p">,</span>
+<span class="s1">&#39;3P Made&#39;</span><span class="p">:</span><span class="s1">&#39;3PointMade&#39;</span><span class="p">,</span>
+<span class="s1">&#39;3PA&#39;</span><span class="p">:</span><span class="s1">&#39;3PointAttempts&#39;</span><span class="p">,</span>
+<span class="s1">&#39;3P%&#39;</span><span class="p">:</span><span class="s1">&#39;3PointAttemptsPercent&#39;</span><span class="p">,</span>
+<span class="s1">&#39;FTM&#39;</span><span class="p">:</span><span class="s1">&#39;FreeThrowMade&#39;</span><span class="p">,</span>
+<span class="s1">&#39;FTA&#39;</span><span class="p">:</span><span class="s1">&#39;FreeThrowAttempts&#39;</span><span class="p">,</span>
+<span class="s1">&#39;FT%&#39;</span><span class="p">:</span><span class="s1">&#39;FreeThrowPercent&#39;</span><span class="p">,</span>
+<span class="s1">&#39;OREB&#39;</span><span class="p">:</span><span class="s1">&#39;OffensiveRebounds&#39;</span><span class="p">,</span>
+<span class="s1">&#39;DREB&#39;</span><span class="p">:</span><span class="s1">&#39;DefensiveRebounds&#39;</span><span class="p">,</span>
+<span class="s1">&#39;REB&#39;</span><span class="p">:</span><span class="s1">&#39;Rebounds&#39;</span><span class="p">,</span>
+<span class="s1">&#39;AST&#39;</span><span class="p">:</span><span class="s1">&#39;Assists&#39;</span><span class="p">,</span>
+<span class="s1">&#39;STL&#39;</span><span class="p">:</span><span class="s1">&#39;Steals&#39;</span><span class="p">,</span>
+<span class="s1">&#39;BLK&#39;</span><span class="p">:</span><span class="s1">&#39;Blocks&#39;</span><span class="p">,</span>
+<span class="s1">&#39;TOV&#39;</span><span class="p">:</span><span class="s1">&#39;Turnovers&#39;</span><span class="p">,</span>
+<span class="s1">&#39;TARGET_5Yrs&#39;</span><span class="p">:</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span>
+<span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nba_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GamesPlayed</th>
+      <th>MinutesPlayed</th>
+      <th>PointsPerGame</th>
+      <th>FieldGoalsMade</th>
+      <th>FieldGoalAttempts</th>
+      <th>FieldGoalPercent</th>
+      <th>3PointMade</th>
+      <th>3PointAttempts</th>
+      <th>3PointAttemptsPercent</th>
+      <th>FreeThrowMade</th>
+      <th>FreeThrowAttempts</th>
+      <th>FreeThrowPercent</th>
+      <th>OffensiveRebounds</th>
+      <th>DefensiveRebounds</th>
+      <th>Rebounds</th>
+      <th>Assists</th>
+      <th>Steals</th>
+      <th>Blocks</th>
+      <th>Turnovers</th>
+      <th>CareerLongerThan5Years</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Brandon Ingram</th>
+      <td>36</td>
+      <td>27.4</td>
+      <td>7.4</td>
+      <td>2.6</td>
+      <td>7.6</td>
+      <td>34.7</td>
+      <td>0.5</td>
+      <td>2.1</td>
+      <td>25.0</td>
+      <td>1.6</td>
+      <td>2.3</td>
+      <td>69.9</td>
+      <td>0.7</td>
+      <td>3.4</td>
+      <td>4.1</td>
+      <td>1.9</td>
+      <td>0.4</td>
+      <td>0.4</td>
+      <td>1.3</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Andrew Harrison</th>
+      <td>35</td>
+      <td>26.9</td>
+      <td>7.2</td>
+      <td>2.0</td>
+      <td>6.7</td>
+      <td>29.6</td>
+      <td>0.7</td>
+      <td>2.8</td>
+      <td>23.5</td>
+      <td>2.6</td>
+      <td>3.4</td>
+      <td>76.5</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>2.4</td>
+      <td>3.7</td>
+      <td>1.1</td>
+      <td>0.5</td>
+      <td>1.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>JaKarr Sampson</th>
+      <td>74</td>
+      <td>15.3</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>4.7</td>
+      <td>42.2</td>
+      <td>0.4</td>
+      <td>1.7</td>
+      <td>24.4</td>
+      <td>0.9</td>
+      <td>1.3</td>
+      <td>67.0</td>
+      <td>0.5</td>
+      <td>1.7</td>
+      <td>2.2</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>0.3</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Malik Sealy</th>
+      <td>58</td>
+      <td>11.6</td>
+      <td>5.7</td>
+      <td>2.3</td>
+      <td>5.5</td>
+      <td>42.6</td>
+      <td>0.1</td>
+      <td>0.5</td>
+      <td>22.6</td>
+      <td>0.9</td>
+      <td>1.3</td>
+      <td>68.9</td>
+      <td>1.0</td>
+      <td>0.9</td>
+      <td>1.9</td>
+      <td>0.8</td>
+      <td>0.6</td>
+      <td>0.1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Matt Geiger</th>
+      <td>48</td>
+      <td>11.5</td>
+      <td>4.5</td>
+      <td>1.6</td>
+      <td>3.0</td>
+      <td>52.4</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>1.3</td>
+      <td>1.9</td>
+      <td>67.4</td>
+      <td>1.0</td>
+      <td>1.5</td>
+      <td>2.5</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.4</td>
+      <td>0.8</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Chris Smith</th>
+      <td>80</td>
+      <td>15.8</td>
+      <td>4.3</td>
+      <td>1.6</td>
+      <td>3.6</td>
+      <td>43.3</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>14.3</td>
+      <td>1.2</td>
+      <td>1.5</td>
+      <td>79.2</td>
+      <td>0.4</td>
+      <td>0.8</td>
+      <td>1.2</td>
+      <td>2.5</td>
+      <td>0.6</td>
+      <td>0.2</td>
+      <td>0.8</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Brent Price</th>
+      <td>68</td>
+      <td>12.6</td>
+      <td>3.9</td>
+      <td>1.5</td>
+      <td>4.1</td>
+      <td>35.8</td>
+      <td>0.1</td>
+      <td>0.7</td>
+      <td>16.7</td>
+      <td>0.8</td>
+      <td>1.0</td>
+      <td>79.4</td>
+      <td>0.4</td>
+      <td>1.1</td>
+      <td>1.5</td>
+      <td>2.3</td>
+      <td>0.8</td>
+      <td>0.0</td>
+      <td>1.3</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Marlon Maxey</th>
+      <td>43</td>
+      <td>12.1</td>
+      <td>5.4</td>
+      <td>2.2</td>
+      <td>3.9</td>
+      <td>55.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.6</td>
+      <td>64.3</td>
+      <td>1.5</td>
+      <td>2.3</td>
+      <td>3.8</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.4</td>
+      <td>0.9</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Litterial Green</th>
+      <td>52</td>
+      <td>12.0</td>
+      <td>4.5</td>
+      <td>1.7</td>
+      <td>3.8</td>
+      <td>43.9</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>10.0</td>
+      <td>1.2</td>
+      <td>1.8</td>
+      <td>62.5</td>
+      <td>0.2</td>
+      <td>0.4</td>
+      <td>0.7</td>
+      <td>2.2</td>
+      <td>0.4</td>
+      <td>0.1</td>
+      <td>0.8</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Jon Barry</th>
+      <td>47</td>
+      <td>11.7</td>
+      <td>4.4</td>
+      <td>1.6</td>
+      <td>4.4</td>
+      <td>36.9</td>
+      <td>0.4</td>
+      <td>1.3</td>
+      <td>33.3</td>
+      <td>0.7</td>
+      <td>1.0</td>
+      <td>67.3</td>
+      <td>0.2</td>
+      <td>0.7</td>
+      <td>0.9</td>
+      <td>1.4</td>
+      <td>0.7</td>
+      <td>0.1</td>
+      <td>0.9</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1340 rows × 20 columns</p>
+</div></div></div>
+</div>
 <p>Now, we should take a look at the data to better understand it.</p>
 <p>First, we will display a description of the colums.</p>
 <p><img alt="Columns" src="../_images/columns.png" /></p>
@@ -332,26 +682,26 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>GP</th>
-      <th>MIN</th>
-      <th>PTS</th>
-      <th>FGM</th>
-      <th>FGA</th>
-      <th>FG%</th>
-      <th>3P Made</th>
-      <th>3PA</th>
-      <th>3P%</th>
-      <th>FTM</th>
-      <th>FTA</th>
-      <th>FT%</th>
-      <th>OREB</th>
-      <th>DREB</th>
-      <th>REB</th>
-      <th>AST</th>
-      <th>STL</th>
-      <th>BLK</th>
-      <th>TOV</th>
-      <th>TARGET_5Yrs</th>
+      <th>GamesPlayed</th>
+      <th>MinutesPlayed</th>
+      <th>PointsPerGame</th>
+      <th>FieldGoalsMade</th>
+      <th>FieldGoalAttempts</th>
+      <th>FieldGoalPercent</th>
+      <th>3PointMade</th>
+      <th>3PointAttempts</th>
+      <th>3PointAttemptsPercent</th>
+      <th>FreeThrowMade</th>
+      <th>FreeThrowAttempts</th>
+      <th>FreeThrowPercent</th>
+      <th>OffensiveRebounds</th>
+      <th>DefensiveRebounds</th>
+      <th>Rebounds</th>
+      <th>Assists</th>
+      <th>Steals</th>
+      <th>Blocks</th>
+      <th>Turnovers</th>
+      <th>CareerLongerThan5Years</th>
     </tr>
     <tr>
       <th>Name</th>
@@ -522,26 +872,26 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>GP</th>
-      <th>MIN</th>
-      <th>PTS</th>
-      <th>FGM</th>
-      <th>FGA</th>
-      <th>FG%</th>
-      <th>3P Made</th>
-      <th>3PA</th>
-      <th>3P%</th>
-      <th>FTM</th>
-      <th>FTA</th>
-      <th>FT%</th>
-      <th>OREB</th>
-      <th>DREB</th>
-      <th>REB</th>
-      <th>AST</th>
-      <th>STL</th>
-      <th>BLK</th>
-      <th>TOV</th>
-      <th>TARGET_5Yrs</th>
+      <th>GamesPlayed</th>
+      <th>MinutesPlayed</th>
+      <th>PointsPerGame</th>
+      <th>FieldGoalsMade</th>
+      <th>FieldGoalAttempts</th>
+      <th>FieldGoalPercent</th>
+      <th>3PointMade</th>
+      <th>3PointAttempts</th>
+      <th>3PointAttemptsPercent</th>
+      <th>FreeThrowMade</th>
+      <th>FreeThrowAttempts</th>
+      <th>FreeThrowPercent</th>
+      <th>OffensiveRebounds</th>
+      <th>DefensiveRebounds</th>
+      <th>Rebounds</th>
+      <th>Assists</th>
+      <th>Steals</th>
+      <th>Blocks</th>
+      <th>Turnovers</th>
+      <th>CareerLongerThan5Years</th>
     </tr>
     <tr>
       <th>Name</th>
@@ -697,28 +1047,28 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 Index: 1340 entries, Brandon Ingram to Jon Barry
 Data columns (total 20 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   GP           1340 non-null   int64  
- 1   MIN          1340 non-null   float64
- 2   PTS          1340 non-null   float64
- 3   FGM          1340 non-null   float64
- 4   FGA          1340 non-null   float64
- 5   FG%          1340 non-null   float64
- 6   3P Made      1340 non-null   float64
- 7   3PA          1340 non-null   float64
- 8   3P%          1329 non-null   float64
- 9   FTM          1340 non-null   float64
- 10  FTA          1340 non-null   float64
- 11  FT%          1340 non-null   float64
- 12  OREB         1340 non-null   float64
- 13  DREB         1340 non-null   float64
- 14  REB          1340 non-null   float64
- 15  AST          1340 non-null   float64
- 16  STL          1340 non-null   float64
- 17  BLK          1340 non-null   float64
- 18  TOV          1340 non-null   float64
- 19  TARGET_5Yrs  1340 non-null   float64
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   GamesPlayed             1340 non-null   int64  
+ 1   MinutesPlayed           1340 non-null   float64
+ 2   PointsPerGame           1340 non-null   float64
+ 3   FieldGoalsMade          1340 non-null   float64
+ 4   FieldGoalAttempts       1340 non-null   float64
+ 5   FieldGoalPercent        1340 non-null   float64
+ 6   3PointMade              1340 non-null   float64
+ 7   3PointAttempts          1340 non-null   float64
+ 8   3PointAttemptsPercent   1329 non-null   float64
+ 9   FreeThrowMade           1340 non-null   float64
+ 10  FreeThrowAttempts       1340 non-null   float64
+ 11  FreeThrowPercent        1340 non-null   float64
+ 12  OffensiveRebounds       1340 non-null   float64
+ 13  DefensiveRebounds       1340 non-null   float64
+ 14  Rebounds                1340 non-null   float64
+ 15  Assists                 1340 non-null   float64
+ 16  Steals                  1340 non-null   float64
+ 17  Blocks                  1340 non-null   float64
+ 18  Turnovers               1340 non-null   float64
+ 19  CareerLongerThan5Years  1340 non-null   float64
 dtypes: float64(19), int64(1)
 memory usage: 219.8+ KB
 </pre></div>
@@ -750,26 +1100,26 @@ memory usage: 219.8+ KB
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>GP</th>
-      <th>MIN</th>
-      <th>PTS</th>
-      <th>FGM</th>
-      <th>FGA</th>
-      <th>FG%</th>
-      <th>3P Made</th>
-      <th>3PA</th>
-      <th>3P%</th>
-      <th>FTM</th>
-      <th>FTA</th>
-      <th>FT%</th>
-      <th>OREB</th>
-      <th>DREB</th>
-      <th>REB</th>
-      <th>AST</th>
-      <th>STL</th>
-      <th>BLK</th>
-      <th>TOV</th>
-      <th>TARGET_5Yrs</th>
+      <th>GamesPlayed</th>
+      <th>MinutesPlayed</th>
+      <th>PointsPerGame</th>
+      <th>FieldGoalsMade</th>
+      <th>FieldGoalAttempts</th>
+      <th>FieldGoalPercent</th>
+      <th>3PointMade</th>
+      <th>3PointAttempts</th>
+      <th>3PointAttemptsPercent</th>
+      <th>FreeThrowMade</th>
+      <th>FreeThrowAttempts</th>
+      <th>FreeThrowPercent</th>
+      <th>OffensiveRebounds</th>
+      <th>DefensiveRebounds</th>
+      <th>Rebounds</th>
+      <th>Assists</th>
+      <th>Steals</th>
+      <th>Blocks</th>
+      <th>Turnovers</th>
+      <th>CareerLongerThan5Years</th>
     </tr>
   </thead>
   <tbody>
@@ -968,110 +1318,27 @@ memory usage: 219.8+ KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GP               int64
-MIN            float64
-PTS            float64
-FGM            float64
-FGA            float64
-FG%            float64
-3P Made        float64
-3PA            float64
-3P%            float64
-FTM            float64
-FTA            float64
-FT%            float64
-OREB           float64
-DREB           float64
-REB            float64
-AST            float64
-STL            float64
-BLK            float64
-TOV            float64
-TARGET_5Yrs    float64
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GamesPlayed                 int64
+MinutesPlayed             float64
+PointsPerGame             float64
+FieldGoalsMade            float64
+FieldGoalAttempts         float64
+FieldGoalPercent          float64
+3PointMade                float64
+3PointAttempts            float64
+3PointAttemptsPercent     float64
+FreeThrowMade             float64
+FreeThrowAttempts         float64
+FreeThrowPercent          float64
+OffensiveRebounds         float64
+DefensiveRebounds         float64
+Rebounds                  float64
+Assists                   float64
+Steals                    float64
+Blocks                    float64
+Turnovers                 float64
+CareerLongerThan5Years    float64
 dtype: object
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>60.41417910447761
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Brandon Ingram     36.0
-Andrew Harrison    35.0
-JaKarr Sampson     74.0
-Malik Sealy        58.0
-Matt Geiger        48.0
-                   ... 
-Chris Smith        80.0
-Brent Price        68.0
-Marlon Maxey       43.0
-Litterial Green    52.0
-Jon Barry          47.0
-Name: GP, Length: 1340, dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([36, 35, 74, 58, 48, 75, 62, 65, 42, 40, 27, 45, 44, 49, 41, 82, 80,
-       76, 61, 32, 52, 78, 51, 64, 55, 34, 77, 72, 69, 54, 24, 50, 56, 67,
-       38, 37, 46, 19, 79, 81, 70, 33, 73, 47, 63, 15, 68, 39, 31, 25, 43,
-       59, 66, 60, 71, 57, 21, 53, 29, 23, 28, 12, 11, 30, 22, 26, 18, 20,
-       14, 16])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;100&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name
-Brandon Ingram     False
-Andrew Harrison    False
-JaKarr Sampson     False
-Malik Sealy        False
-Matt Geiger        False
-                   ...  
-Chris Smith        False
-Brent Price        False
-Marlon Maxey       False
-Litterial Green    False
-Jon Barry          False
-Name: GP, Length: 1340, dtype: bool
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Brent Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Jon Barry&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1085,9 +1352,49 @@ Name: GP, Length: 1340, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Q1: 47.0
-Q3: 77.0
-Index mit dem höchsten GP Wert: Larry Johnson
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/core/indexes/base.py:3803,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3802</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3803</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/_libs/index.pyx:138,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/_libs/index.pyx:165,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5745,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">File pandas/_libs/hashtable_class_helper.pxi:5753,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;GP&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q1: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Q3: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.75</span><span class="p">)))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Index mit dem höchsten GP Wert: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nba_data</span><span class="p">[</span><span class="s1">&#39;GP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()))</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/core/frame.py:3805,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3803</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3805</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.15/x64/lib/python3.8/site-packages/pandas/core/indexes/base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key, method, tolerance)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3803</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3808</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3809</span>     <span class="c1">#  the TypeError.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;GP&#39;
 </pre></div>
 </div>
 </div>
