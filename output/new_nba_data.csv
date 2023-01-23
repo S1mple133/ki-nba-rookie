@@ -1,4 +1,4 @@
-Name,GP,MIN,PTS,FGM,FGA,FG%,3P Made,3PA,3P%,FTM,FTA,FT%,OREB,DREB,REB,AST,STL,BLK,TOV,TARGET_5Yrs,Spielerfahrung
+Name,GamesPlayed,MinutesPlayed,PointsPerGame,FieldGoalsMade,FieldGoalAttempts,FieldGoalPercent,3PointMade,3PointAttempts,3PointAttemptsPercent,FreeThrowMade,FreeThrowAttempts,FreeThrowPercent,OffensiveRebounds,DefensiveRebounds,Rebounds,Assists,Steals,Blocks,Turnovers,CareerLongerThan5Years,Spielerfahrung
 Brandon Ingram,36,54.8,7.4,2.6,7.6,34.7,0.5,2.1,25.0,1.6,2.3,69.9,0.7,3.4,4.1,1.9,0.4,0.4,1.3,0.0,Unerfahren
 Andrew Harrison,35,53.8,7.2,2.0,6.7,29.6,0.7,2.8,23.5,2.6,3.4,76.5,0.5,2.0,2.4,3.7,1.1,0.5,1.6,0.0,Unerfahren
 JaKarr Sampson,74,30.6,5.2,2.0,4.7,42.2,0.4,1.7,24.4,0.9,1.3,67.0,0.5,1.7,2.2,1.0,0.5,0.3,1.0,0.0,Amateur
@@ -1335,5 +1335,7 @@ Hubert Davis,50,32.6,5.4,2.2,5.0,43.8,0.1,0.4,31.6,0.9,1.1,79.6,0.3,0.9,1.1,1.7,
 Byron Houston,79,32.2,5.3,1.8,4.1,44.6,0.0,0.1,28.6,1.6,2.5,66.5,1.5,2.5,4.0,0.9,0.6,0.5,1.1,0.0,Amateur
 Chris Smith,80,31.6,4.3,1.6,3.6,43.3,0.0,0.2,14.3,1.2,1.5,79.2,0.4,0.8,1.2,2.5,0.6,0.2,0.8,0.0,Amateur
 Chris Smith,80,31.6,4.3,1.6,3.6,43.3,0.0,0.2,14.3,1.2,1.5,79.2,0.4,0.8,1.2,2.5,0.6,0.2,0.8,0.0,Amateur
+Brent Price,68,25.2,3.9,1.5,4.1,35.8,0.1,0.7,16.7,0.8,1.0,79.4,0.4,1.1,1.5,2.3,0.8,0.0,1.3,1.0,Unerfahren
 Marlon Maxey,43,24.2,5.4,2.2,3.9,55.0,0.0,0.0,0.0,1.0,1.6,64.3,1.5,2.3,3.8,0.3,0.3,0.4,0.9,0.0,Unerfahren
 Litterial Green,52,24.0,4.5,1.7,3.8,43.9,0.0,0.2,10.0,1.2,1.8,62.5,0.2,0.4,0.7,2.2,0.4,0.1,0.8,1.0,Unerfahren
+Jon Barry,47,23.4,4.4,1.6,4.4,36.9,0.4,1.3,33.3,0.7,1.0,67.3,0.2,0.7,0.9,1.4,0.7,0.1,0.9,1.0,Unerfahren
