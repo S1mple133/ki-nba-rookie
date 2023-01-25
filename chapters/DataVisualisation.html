@@ -290,6 +290,463 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="data-visualisation">
 <h1>Data Visualisation<a class="headerlink" href="#data-visualisation" title="Permalink to this headline">#</a></h1>
 <p>Visualize NBA player data to find out which features can be used for classification.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../output/new_nba_data.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">nba_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>GamesPlayed</th>
+      <th>MinutesPlayed</th>
+      <th>PointsPerGame</th>
+      <th>FieldGoalsMade</th>
+      <th>FieldGoalAttempts</th>
+      <th>FieldGoalPercent</th>
+      <th>3PointMade</th>
+      <th>3PointAttempts</th>
+      <th>3PointAttemptsPercent</th>
+      <th>FreeThrowMade</th>
+      <th>FreeThrowAttempts</th>
+      <th>FreeThrowPercent</th>
+      <th>OffensiveRebounds</th>
+      <th>DefensiveRebounds</th>
+      <th>Rebounds</th>
+      <th>Assists</th>
+      <th>Steals</th>
+      <th>Blocks</th>
+      <th>Turnovers</th>
+      <th>CareerLongerThan5Years</th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Brandon Ingram</th>
+      <td>36</td>
+      <td>27.4</td>
+      <td>7.4</td>
+      <td>2.6</td>
+      <td>7.6</td>
+      <td>34.7</td>
+      <td>0.5</td>
+      <td>2.1</td>
+      <td>25.0</td>
+      <td>1.6</td>
+      <td>2.3</td>
+      <td>69.9</td>
+      <td>0.7</td>
+      <td>3.4</td>
+      <td>4.1</td>
+      <td>1.9</td>
+      <td>0.4</td>
+      <td>0.4</td>
+      <td>1.3</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Andrew Harrison</th>
+      <td>35</td>
+      <td>26.9</td>
+      <td>7.2</td>
+      <td>2.0</td>
+      <td>6.7</td>
+      <td>29.6</td>
+      <td>0.7</td>
+      <td>2.8</td>
+      <td>23.5</td>
+      <td>2.6</td>
+      <td>3.4</td>
+      <td>76.5</td>
+      <td>0.5</td>
+      <td>2.0</td>
+      <td>2.4</td>
+      <td>3.7</td>
+      <td>1.1</td>
+      <td>0.5</td>
+      <td>1.6</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>JaKarr Sampson</th>
+      <td>74</td>
+      <td>15.3</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>4.7</td>
+      <td>42.2</td>
+      <td>0.4</td>
+      <td>1.7</td>
+      <td>24.4</td>
+      <td>0.9</td>
+      <td>1.3</td>
+      <td>67.0</td>
+      <td>0.5</td>
+      <td>1.7</td>
+      <td>2.2</td>
+      <td>1.0</td>
+      <td>0.5</td>
+      <td>0.3</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Malik Sealy</th>
+      <td>58</td>
+      <td>11.6</td>
+      <td>5.7</td>
+      <td>2.3</td>
+      <td>5.5</td>
+      <td>42.6</td>
+      <td>0.1</td>
+      <td>0.5</td>
+      <td>22.6</td>
+      <td>0.9</td>
+      <td>1.3</td>
+      <td>68.9</td>
+      <td>1.0</td>
+      <td>0.9</td>
+      <td>1.9</td>
+      <td>0.8</td>
+      <td>0.6</td>
+      <td>0.1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Matt Geiger</th>
+      <td>48</td>
+      <td>11.5</td>
+      <td>4.5</td>
+      <td>1.6</td>
+      <td>3.0</td>
+      <td>52.4</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>1.3</td>
+      <td>1.9</td>
+      <td>67.4</td>
+      <td>1.0</td>
+      <td>1.5</td>
+      <td>2.5</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.4</td>
+      <td>0.8</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>Chris Smith</th>
+      <td>80</td>
+      <td>15.8</td>
+      <td>4.3</td>
+      <td>1.6</td>
+      <td>3.6</td>
+      <td>43.3</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>14.3</td>
+      <td>1.2</td>
+      <td>1.5</td>
+      <td>79.2</td>
+      <td>0.4</td>
+      <td>0.8</td>
+      <td>1.2</td>
+      <td>2.5</td>
+      <td>0.6</td>
+      <td>0.2</td>
+      <td>0.8</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Brent Price</th>
+      <td>68</td>
+      <td>12.6</td>
+      <td>3.9</td>
+      <td>1.5</td>
+      <td>4.1</td>
+      <td>35.8</td>
+      <td>0.1</td>
+      <td>0.7</td>
+      <td>16.7</td>
+      <td>0.8</td>
+      <td>1.0</td>
+      <td>79.4</td>
+      <td>0.4</td>
+      <td>1.1</td>
+      <td>1.5</td>
+      <td>2.3</td>
+      <td>0.8</td>
+      <td>0.0</td>
+      <td>1.3</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Marlon Maxey</th>
+      <td>43</td>
+      <td>12.1</td>
+      <td>5.4</td>
+      <td>2.2</td>
+      <td>3.9</td>
+      <td>55.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.6</td>
+      <td>64.3</td>
+      <td>1.5</td>
+      <td>2.3</td>
+      <td>3.8</td>
+      <td>0.3</td>
+      <td>0.3</td>
+      <td>0.4</td>
+      <td>0.9</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Litterial Green</th>
+      <td>52</td>
+      <td>12.0</td>
+      <td>4.5</td>
+      <td>1.7</td>
+      <td>3.8</td>
+      <td>43.9</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>10.0</td>
+      <td>1.2</td>
+      <td>1.8</td>
+      <td>62.5</td>
+      <td>0.2</td>
+      <td>0.4</td>
+      <td>0.7</td>
+      <td>2.2</td>
+      <td>0.4</td>
+      <td>0.1</td>
+      <td>0.8</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Jon Barry</th>
+      <td>47</td>
+      <td>11.7</td>
+      <td>4.4</td>
+      <td>1.6</td>
+      <td>4.4</td>
+      <td>36.9</td>
+      <td>0.4</td>
+      <td>1.3</td>
+      <td>33.3</td>
+      <td>0.7</td>
+      <td>1.0</td>
+      <td>67.3</td>
+      <td>0.2</td>
+      <td>0.7</td>
+      <td>0.9</td>
+      <td>1.4</td>
+      <td>0.7</td>
+      <td>0.1</td>
+      <td>0.9</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>1340 rows × 20 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">xkcd_palette</span><span class="p">([</span><span class="s1">&#39;dark blue&#39;</span><span class="p">,</span><span class="s1">&#39;light red&#39;</span><span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">palplot</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/DataVisualisation_3_0.png" src="../_images/DataVisualisation_3_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdab773fd00&gt;
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_4_1.png" src="../_images/DataVisualisation_4_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdaf33c9370&gt;
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_5_1.png" src="../_images/DataVisualisation_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdaa9ce7e80&gt;
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_6_1.png" src="../_images/DataVisualisation_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">15</span><span class="p">:],</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdaa90abbb0&gt;
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_7_1.png" src="../_images/DataVisualisation_7_1.png" />
+</div>
+</div>
+<p>The column “Gamesplayed” is one of the most decisive columns because it provides the clearest data which does not overlap a lot between players that have a career longer than five years and those who have not played for 5 years.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;CareerLongerThan5Years&#39;, ylabel=&#39;GamesPlayed&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_9_1.png" src="../_images/DataVisualisation_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GamesPlayed&#39;</span> <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">gamesPlayed_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span><span class="s1">&#39;MinutesPlayed&#39;</span><span class="p">,</span><span class="s1">&#39;PointsPerGame&#39;</span><span class="p">,</span><span class="s1">&#39;FieldGoalsMade&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
+            <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">j</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1913/1579026525.py:2: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
+  sns.stripplot(data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=&#39;GamesPlayed&#39;,palette=colors)
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_10_1.png" src="../_images/DataVisualisation_10_1.png" />
+<img alt="../_images/DataVisualisation_10_2.png" src="../_images/DataVisualisation_10_2.png" />
+<img alt="../_images/DataVisualisation_10_3.png" src="../_images/DataVisualisation_10_3.png" />
+<img alt="../_images/DataVisualisation_10_4.png" src="../_images/DataVisualisation_10_4.png" />
+<img alt="../_images/DataVisualisation_10_5.png" src="../_images/DataVisualisation_10_5.png" />
+<img alt="../_images/DataVisualisation_10_6.png" src="../_images/DataVisualisation_10_6.png" />
+<img alt="../_images/DataVisualisation_10_7.png" src="../_images/DataVisualisation_10_7.png" />
+<img alt="../_images/DataVisualisation_10_8.png" src="../_images/DataVisualisation_10_8.png" />
+<img alt="../_images/DataVisualisation_10_9.png" src="../_images/DataVisualisation_10_9.png" />
+<img alt="../_images/DataVisualisation_10_10.png" src="../_images/DataVisualisation_10_10.png" />
+<img alt="../_images/DataVisualisation_10_11.png" src="../_images/DataVisualisation_10_11.png" />
+<img alt="../_images/DataVisualisation_10_12.png" src="../_images/DataVisualisation_10_12.png" />
+<img alt="../_images/DataVisualisation_10_13.png" src="../_images/DataVisualisation_10_13.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that those players who play more games have a higher chance of having a career longer than 5 years. But it overlaps a lot, so we can’t say that it is a good <a class="reference external" href="http://predictor.It">predictor.It</a> requires other fields to get a better overview.</p>
 </section>
 
     <script type="text/x-thebe-config">
