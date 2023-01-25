@@ -119,6 +119,11 @@ const thebe_selector_output = ".output, .cell_output"
    Data Visualisation
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="RandomForest.html">
+   Random Forest
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -2222,8 +2227,119 @@ Name: CareerLongerThan5Years, dtype: int64
 </div>
 <p>The average player who has a career longer than 5 years plays aprox. 10 games more than a player whose career doesnt last that long.</p>
 <p>He also plays on average more minutes per game.</p>
-<p>The difference between the avg. Three Points made aren’t that big, allthough the players with longer careers succeed more in free throws and are better at defence.</p>
+<p>Surprisingly, the difference between the avg. Three Points made aren’t that big, allthough the players with longer careers succeed more in free throws and are better at defence.</p>
 <p>They also have on average a higher amount of points made per game.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">nba_data</span><span class="o">.</span><span class="n">corr</span><span class="p">()[[</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;CareerLongerThan5Years&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">col</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">col</span><span class="p">))</span>
+<span class="n">corr</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="c1"># Ignore CareerLongerThan5Years row</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CareerLongerThan5Years</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>GamesPlayed</th>
+      <td>0.396833</td>
+    </tr>
+    <tr>
+      <th>MinutesPlayed</th>
+      <td>0.317805</td>
+    </tr>
+    <tr>
+      <th>FieldGoalsMade</th>
+      <td>0.317594</td>
+    </tr>
+    <tr>
+      <th>PointsPerGame</th>
+      <td>0.315981</td>
+    </tr>
+    <tr>
+      <th>Rebounds</th>
+      <td>0.299406</td>
+    </tr>
+    <tr>
+      <th>FreeThrowMade</th>
+      <td>0.296841</td>
+    </tr>
+    <tr>
+      <th>FreeThrowAttempts</th>
+      <td>0.296089</td>
+    </tr>
+    <tr>
+      <th>OffensiveRebounds</th>
+      <td>0.293307</td>
+    </tr>
+    <tr>
+      <th>FieldGoalAttempts</th>
+      <td>0.292660</td>
+    </tr>
+    <tr>
+      <th>DefensiveRebounds</th>
+      <td>0.284677</td>
+    </tr>
+    <tr>
+      <th>Turnovers</th>
+      <td>0.272348</td>
+    </tr>
+    <tr>
+      <th>Steals</th>
+      <td>0.229811</td>
+    </tr>
+    <tr>
+      <th>FieldGoalPercent</th>
+      <td>0.227134</td>
+    </tr>
+    <tr>
+      <th>Blocks</th>
+      <td>0.210114</td>
+    </tr>
+    <tr>
+      <th>Assists</th>
+      <td>0.175353</td>
+    </tr>
+    <tr>
+      <th>FreeThrowPercent</th>
+      <td>0.106706</td>
+    </tr>
+    <tr>
+      <th>3PointMade</th>
+      <td>0.036619</td>
+    </tr>
+    <tr>
+      <th>3PointAttempts</th>
+      <td>0.018110</td>
+    </tr>
+    <tr>
+      <th>3PointAttemptsPercent</th>
+      <td>-0.000004</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>By taking a look at the correlation matrix, the 4 most decisive columns for the prediction are GamesPlayed,MinutesPlayed, FieldGoalsMade and PointsPerGame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nba_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../output/new_nba_data.csv&#39;</span><span class="p">)</span>
