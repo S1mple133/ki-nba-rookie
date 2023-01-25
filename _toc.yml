@@ -3,3 +3,4 @@ root: README.md
 chapters:
 - file: chapters/DataAnalysisAndManipulation.ipynb
 - file: chapters/DataVisualisation.ipynb
+- file: chapters/RandomForest.ipynb
