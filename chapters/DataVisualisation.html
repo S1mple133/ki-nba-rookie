@@ -295,6 +295,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">math</span> 
 </pre></div>
 </div>
 </div>
@@ -647,7 +648,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f0f5875baf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa56e9f1eb0&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_4_1.png" src="../_images/DataVisualisation_4_1.png" />
@@ -660,7 +661,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f0f19bfac10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa5608f8640&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_5_1.png" src="../_images/DataVisualisation_5_1.png" />
@@ -673,7 +674,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f0f1f97bd30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa566482f70&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_6_1.png" src="../_images/DataVisualisation_6_1.png" />
@@ -686,7 +687,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f0f115ba4f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa55c63ac10&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_7_1.png" src="../_images/DataVisualisation_7_1.png" />
@@ -715,56 +716,105 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1918/3049391887.py:2: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1840/3049391887.py:2: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
   sns.stripplot(data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=&#39;GamesPlayed&#39;,palette=colors)
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_10_1.png" src="../_images/DataVisualisation_10_1.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nba_data</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">4</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">25</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="c1">#sns.FacetGrid(data=nba_data, hue=&quot;CareerLongerThan5Years&quot;, col=&quot;GamesPlayed&quot;, height=4, palette=colors).map(sns.kdeplot, &quot;GamesPlayed&quot;, shade=True, cut=0).add_legend()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">j</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1840/1619567479.py:8: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure()
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_11_1.png" src="../_images/DataVisualisation_11_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
 <p>We can see that those players who play more games have a higher chance of having a career longer than 5 years. But it overlaps a lot, so we can’t say that it is a good <a class="reference external" href="http://predictor.It">predictor.It</a> requires other fields to get a better overview.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/DataVisualisation_12_0.png" src="../_images/DataVisualisation_12_0.png" />
-<img alt="../_images/DataVisualisation_12_1.png" src="../_images/DataVisualisation_12_1.png" />
-<img alt="../_images/DataVisualisation_12_2.png" src="../_images/DataVisualisation_12_2.png" />
-<img alt="../_images/DataVisualisation_12_3.png" src="../_images/DataVisualisation_12_3.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
-            <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">j</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/DataVisualisation_13_0.png" src="../_images/DataVisualisation_13_0.png" />
-<img alt="../_images/DataVisualisation_13_1.png" src="../_images/DataVisualisation_13_1.png" />
-<img alt="../_images/DataVisualisation_13_2.png" src="../_images/DataVisualisation_13_2.png" />
-<img alt="../_images/DataVisualisation_13_3.png" src="../_images/DataVisualisation_13_3.png" />
-<img alt="../_images/DataVisualisation_13_4.png" src="../_images/DataVisualisation_13_4.png" />
-<img alt="../_images/DataVisualisation_13_5.png" src="../_images/DataVisualisation_13_5.png" />
-<img alt="../_images/DataVisualisation_13_6.png" src="../_images/DataVisualisation_13_6.png" />
-<img alt="../_images/DataVisualisation_13_7.png" src="../_images/DataVisualisation_13_7.png" />
-<img alt="../_images/DataVisualisation_13_8.png" src="../_images/DataVisualisation_13_8.png" />
-<img alt="../_images/DataVisualisation_13_9.png" src="../_images/DataVisualisation_13_9.png" />
-<img alt="../_images/DataVisualisation_13_10.png" src="../_images/DataVisualisation_13_10.png" />
-<img alt="../_images/DataVisualisation_13_11.png" src="../_images/DataVisualisation_13_11.png" />
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#for i in nba_data.loc[:,nba_data.columns != &#39;CareerLongerThan5Years&#39;].columns:</span>
+<span class="c1">#    for j in nba_data.loc[:,nba_data.columns != &#39;CareerLongerThan5Years&#39;].columns:</span>
+<span class="c1">#        if(i != j):</span>
+<span class="c1">#            sns.kdeplot(data=nba_data, x=j, y=i,hue=&#39;CareerLongerThan5Years&#39;, palette=colors)</span>
+<span class="c1">#            plt.figure()</span>
 </pre></div>
 </div>
 </div>
