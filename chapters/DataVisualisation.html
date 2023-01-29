@@ -647,7 +647,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f558cf40d30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fbe04e7bca0&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_4_1.png" src="../_images/DataVisualisation_4_1.png" />
@@ -660,7 +660,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f558502f730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fbdcdf46760&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_5_1.png" src="../_images/DataVisualisation_5_1.png" />
@@ -673,7 +673,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f557f3d1ee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fbe04e8ee50&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_6_1.png" src="../_images/DataVisualisation_6_1.png" />
@@ -686,7 +686,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f5576d65d60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fbdbfc31df0&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_7_1.png" src="../_images/DataVisualisation_7_1.png" />
@@ -724,7 +724,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1895/1579026525.py:2: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1853/1579026525.py:2: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
   sns.stripplot(data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=&#39;GamesPlayed&#39;,palette=colors)
 </pre></div>
 </div>
@@ -749,12 +749,7 @@ title="Print to PDF"
 <p>We can see that those players who play more games have a higher chance of having a career longer than 5 years. But it overlaps a lot, so we can’t say that it is a good <a class="reference external" href="http://predictor.It">predictor.It</a> requires other fields to get a better overview.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gamesPlayed_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span><span class="s1">&#39;MinutesPlayed&#39;</span><span class="p">,</span><span class="s1">&#39;PointsPerGame&#39;</span><span class="p">,</span><span class="s1">&#39;FieldGoalsMade&#39;</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-
-
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
     <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 </pre></div>
@@ -765,6 +760,24 @@ title="Print to PDF"
 <img alt="../_images/DataVisualisation_12_1.png" src="../_images/DataVisualisation_12_1.png" />
 <img alt="../_images/DataVisualisation_12_2.png" src="../_images/DataVisualisation_12_2.png" />
 <img alt="../_images/DataVisualisation_12_3.png" src="../_images/DataVisualisation_12_3.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gamesPlayed_values</span><span class="p">:</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="s1">&#39;GamesPlayed&#39;</span><span class="p">):</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;GamesPlayed&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">j</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/DataVisualisation_13_0.png" src="../_images/DataVisualisation_13_0.png" />
+<img alt="../_images/DataVisualisation_13_1.png" src="../_images/DataVisualisation_13_1.png" />
+<img alt="../_images/DataVisualisation_13_2.png" src="../_images/DataVisualisation_13_2.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
