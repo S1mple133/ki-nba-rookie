@@ -648,7 +648,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa9ac4ae2b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdfbf4a82e0&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_4_1.png" src="../_images/DataVisualisation_4_1.png" />
@@ -661,7 +661,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa9a66b8df0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdf83546700&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_5_1.png" src="../_images/DataVisualisation_5_1.png" />
@@ -674,7 +674,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa9a4b74d90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdf7e158fd0&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_6_1.png" src="../_images/DataVisualisation_6_1.png" />
@@ -687,7 +687,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fa9a4097bb0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fdf7558e850&gt;
 </pre></div>
 </div>
 <img alt="../_images/DataVisualisation_7_1.png" src="../_images/DataVisualisation_7_1.png" />
@@ -704,63 +704,17 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
         <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">j</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">)</span>
-        <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">j</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">j</span><span class="p">],</span><span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:9: FutureWarning: Passing `palette` without assigning `hue` is deprecated.
-  sns.stripplot(ax=axes[i, j], data=nba_data, x=&#39;CareerLongerThan5Years&#39;, y=nba_data.columns[i*4+j],palette=colors)
-/tmp/ipykernel_1901/172680364.py:10: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1908/2495864547.py:10: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
   plt.figure()
 </pre></div>
 </div>
-<img alt="../_images/DataVisualisation_9_4.png" src="../_images/DataVisualisation_9_4.png" />
+<img alt="../_images/DataVisualisation_9_1.png" src="../_images/DataVisualisation_9_1.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -837,7 +791,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/1619567479.py:8: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1908/1619567479.py:8: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
   plt.figure()
 </pre></div>
 </div>
@@ -977,7 +931,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1901/1784320525.py:6: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1908/1784320525.py:6: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
   plt.figure()
 </pre></div>
 </div>
@@ -1049,13 +1003,85 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#for i in nba_data.loc[:,nba_data.columns != &#39;CareerLongerThan5Years&#39;].columns:</span>
-<span class="c1">#    for j in nba_data.loc[:,nba_data.columns != &#39;CareerLongerThan5Years&#39;].columns:</span>
-<span class="c1">#        if(i != j):</span>
-<span class="c1">#            sns.kdeplot(data=nba_data, x=j, y=i,hue=&#39;CareerLongerThan5Years&#39;, palette=colors)</span>
-<span class="c1">#            plt.figure()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nba_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">nba_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
+            <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">j</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1908/3355242636.py:5: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  plt.figure()
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">nba_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">nba_data</span><span class="o">.</span><span class="n">columns</span> <span class="o">!=</span> <span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">nba_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">j</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;CareerLongerThan5Years&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/seaborn/distributions.py:1731,</span> in <span class="ni">kdeplot</span><span class="nt">(data, x, y, hue, weights, palette, hue_order, hue_norm, color, fill, multiple, common_norm, common_grid, cumulative, bw_method, bw_adjust, warn_singular, log_scale, levels, thresh, gridsize, cut, clip, legend, cbar, cbar_ax, cbar_kws, ax, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1717</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_univariate_density</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1718</span>         <span class="n">multiple</span><span class="o">=</span><span class="n">multiple</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1719</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1726</span>         <span class="o">**</span><span class="n">plot_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1727</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1729</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1731</span>     <span class="n">p</span><span class="o">.</span><span class="n">plot_bivariate_density</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1732</span>         <span class="n">common_norm</span><span class="o">=</span><span class="n">common_norm</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1733</span>         <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1734</span>         <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1735</span>         <span class="n">thresh</span><span class="o">=</span><span class="n">thresh</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1736</span>         <span class="n">legend</span><span class="o">=</span><span class="n">legend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1737</span>         <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1738</span>         <span class="n">warn_singular</span><span class="o">=</span><span class="n">warn_singular</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1739</span>         <span class="n">cbar</span><span class="o">=</span><span class="n">cbar</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1740</span>         <span class="n">cbar_ax</span><span class="o">=</span><span class="n">cbar_ax</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1741</span>         <span class="n">cbar_kws</span><span class="o">=</span><span class="n">cbar_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1742</span>         <span class="n">estimate_kws</span><span class="o">=</span><span class="n">estimate_kws</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1743</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1744</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="k">return</span> <span class="n">ax</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/seaborn/distributions.py:1081,</span> in <span class="ni">_DistributionPlotter.plot_bivariate_density</span><span class="nt">(self, common_norm, fill, levels, thresh, color, legend, cbar, warn_singular, cbar_ax, cbar_kws, estimate_kws, **contour_kws)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1079</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1080</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">singular</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1081</span>         <span class="n">density</span><span class="p">,</span> <span class="n">support</span> <span class="o">=</span> <span class="n">estimator</span><span class="p">(</span><span class="o">*</span><span class="n">observations</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1082</span> <span class="k">except</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">LinAlgError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1083</span>     <span class="c1"># Testing for 0 variance doesn&#39;t catch all cases where scipy raises,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1084</span>     <span class="c1"># but we can also get a ValueError, so we need this convoluted approach</span>
+<span class="g g-Whitespace">   </span><span class="mi">1085</span>     <span class="n">singular</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/seaborn/_statistics.py:194,</span> in <span class="ni">KDE.__call__</span><span class="nt">(self, x1, x2, weights)</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_univariate</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">194</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eval_bivariate</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/seaborn/_statistics.py:185,</span> in <span class="ni">KDE._eval_bivariate</span><span class="nt">(self, x1, x2, weights)</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">xx1</span><span class="p">,</span> <span class="n">xx2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="o">*</span><span class="n">support</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">185</span>     <span class="n">density</span> <span class="o">=</span> <span class="n">kde</span><span class="p">([</span><span class="n">xx1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">xx2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="k">return</span> <span class="n">density</span><span class="p">,</span> <span class="n">support</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.8.16/x64/lib/python3.8/site-packages/scipy/stats/_kde.py:268,</span> in <span class="ni">gaussian_kde.evaluate</span><span class="nt">(self, points)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="n">output_dtype</span><span class="p">,</span> <span class="n">spec</span> <span class="o">=</span> <span class="n">_get_output_dtype</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">covariance</span><span class="p">,</span> <span class="n">points</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">268</span> <span class="n">result</span> <span class="o">=</span> <span class="n">gaussian_kernel_estimate</span><span class="p">[</span><span class="n">spec</span><span class="p">](</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span>     <span class="n">points</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cho_cov</span><span class="p">,</span> <span class="n">output_dtype</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="k">return</span> <span class="n">result</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+<img alt="../_images/DataVisualisation_14_2.png" src="../_images/DataVisualisation_14_2.png" />
+<img alt="../_images/DataVisualisation_14_3.png" src="../_images/DataVisualisation_14_3.png" />
+<img alt="../_images/DataVisualisation_14_4.png" src="../_images/DataVisualisation_14_4.png" />
 </div>
 </div>
 </section>
